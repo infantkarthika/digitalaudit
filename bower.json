@@ -1,0 +1,32 @@
+{
+  "name": "digitalaudit",
+  "description": "GO Digital Audit Form",
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "angular": "^1.5.8",
+    "font-awesome": "~4.5.0",
+    "jquery-backstretch-2": "^2.1.15",
+    "angular-resource": "^1.5.8",
+    "angular-animate": "^1.5.8",
+    "angular-messages": "^1.5.8",
+    "angular-ui-router": "^0.3.2",
+    "angular-sanitize": "^1.5.8",
+    "angular-datatables": "^0.5.5",
+    "ngAnimate-animate.css": "^0.1.1"
+  },
+  "authors": [
+    "Infant Karthika"
+  ],
+  "main": "",
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "public/lib",
+    "test",
+    "tests"
+  ]
+}

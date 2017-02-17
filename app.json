@@ -1,0 +1,15 @@
+{
+	"name": "G/O Digital Audit",
+	"description": "GO Digital Audit Form",
+	"website": "",
+	"repository": "",
+	"logo": "",
+	"addons": [ {
+		"plan": "heroku-postgresql:hobby-dev"
+	}, {
+		"plan": "herokuconnect:demo"
+	} ],
+	"buildpacks": [ {
+		"url": "heroku/nodejs"
+	} ]
+}
