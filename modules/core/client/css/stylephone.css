@@ -1,0 +1,53 @@
+@media only screen and (min-width:320px) and (max-width:1023px) {
+	.outerContainer{font-family: myFirstFont;margin-bottom:10%;}
+	header {background:#fff;
+            box-shadow:1px 5px 15px black;
+            overflow:hidden;}
+	.clrFix:after{ clear:both; }
+	.logo{margin-left:5%;float:left;}
+	/* .menus,.navDesktop{display:none;}
+	.navPhone{
+	          float:left;
+	          margin-top:4%;
+	          margin-left:7%;	
+	          width:60%;
+	          box-shadow:-0.5px 3px #E0E0E0;
+	          border-radius:5px;
+	          } */
+	 @font-face {
+    font-family: myFirstFont;
+    src: url(../fonts/Armata-Regular-webfont.ttf);
+     }
+     .sectionHeading {
+                  font-size:50px;
+                  margin-top:2%;
+                  padding-left:1%;
+                  border-bottom:2px solid #BBBBBB;
+      }
+      .successMsg {color:#99A14E;
+             border:2px solid #CCD76F;
+             border-radius:5px;
+             background:#F5F7E0;
+             padding:2%;}
+	.imgAside{display:none;}
+	.rightSection{width:100%;
+	              padding:1%;}
+	.contactContent2{display:none;}
+	.successMsg{padding:3%;}
+	.details{margin-top:5%;}
+	.bUnitsList h3{color:#7D7D7D;margin-top:7%;}
+    .bUnitsList ul {list-style-type:square;}
+    .bUnitsList ul > ul{padding-left:5%}
+	.lists{border:none;
+	       background:none;}
+	 .desktopBtn{display:none;}
+	 .slideImgPhone{min-width:100%;}
+	 select{ width:100%;
+	         padding:1.5%;
+	          border-radius:5px;
+	          background:#E0E0E0;
+	  }
+	  .phoneBtn {display:block;width:50%;margin:0 auto;}
+}
+
+

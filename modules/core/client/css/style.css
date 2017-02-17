@@ -1,0 +1,95 @@
+	body {margin : 0; color: #5C5D61;}
+	
+	.loginWrapper {
+		width : 50%;
+		margin : 5% auto;
+	}
+	.alignCenter {
+		text-align : center;
+	}
+	.loginInput{
+		padding : 2% 15%;
+		margin-top: 20%;
+	}
+	.inputField {
+		padding : 2%;
+	}
+	.resetPass{
+		padding-right : 2%;
+	}
+		
+	.logoDb {
+		margin : auto 1%;
+	}
+	.logoutLink{
+		margin:1%;
+	}	
+	.leftSide {
+		width : 20%;
+		float : left;
+		background-color : #2A3F54;
+		min-height : 750px;
+	}
+	.welcome {
+		color : #fff;
+		padding : 2%; 
+	}
+	.menu {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    background-color: #2A3F54;
+	}
+	.menu li a,.menuInner li a {
+		display: block;
+		color: white;
+		padding: 2% 2%;
+		text-decoration: none;
+	}
+	.menu li a.active,.menuInner li a.active {
+		background-color: #425870;
+		color: white;
+	}
+	.menu li a:hover:not(.active),.menuInner li a:hover:not(.active){
+		background-color: #374A5E;
+		color: white;
+	}
+	.rightSide {
+		width : 80%;
+		float : left;
+		border :1px solid #2A3F54;
+		min-height : 750px;
+		padding : 1%;
+	}
+	.clearFix {
+		clear : both;
+	}
+	.newBtn {
+		padding : 1%;
+		float : right;
+	}
+	.penForms {clear : both;}
+	
+	.menuInner {
+		list-style-type: none;
+		width: 100%;
+		background-color: #2A3F54;
+	}
+	.conInfo,.busInfo,.auditSel {
+		padding : 1% 2%;
+	}
+	.wholeContainer {
+		min-height : 750px;
+	}
+	.login-btn {
+		background-color: rgb(34, 146, 208) !important;
+	}
+	.login-btn:hover, .login-btn:focus, .login-btn.active {
+		background-color: rgb(86, 87, 91) !important;
+	}
+@media only screen and (min-width:320px) and (max-width:1023px) {
+	.loginWrapper {
+		width : inherit;
+	}
+}

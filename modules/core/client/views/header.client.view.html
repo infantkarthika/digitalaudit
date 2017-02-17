@@ -1,0 +1,7 @@
+<div class="container" ng-controller="HeaderController" ng-show="authentication.user">
+<div class="userlog col-xs-4 col-xs-offset-4">
+		Logged in as <a href="/dashboard">{{authentication.user.username}}</a> | 
+		<a ng-click="signout()">sign out</a>
+	</div>
+	
+</div>

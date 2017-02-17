@@ -1,0 +1,53 @@
+<div class="row" ng-controller="digitalauditController">
+	<div class="col-sm-12 form-box" ng-init="getPages()">
+		<form role="form" name="digitalauditForm" ng-submit="pageSubmit(digitalauditForm.$valid)" method="post" class="f1 form-horizontal" autocomplete="off" novalidate>
+			<div class="row">
+				<div class="col-xs-6 col-xs-offset-
+					<img src="/modules/core/client/img/logo/logo.png" class="logo"/>
+				</div>
+			</div>
+			
+			<p>Digital Audit Form</p>
+			<p><a href="/dashboard" class="btn btn-next btn-xs">Back to Dashboard</a></p>
+			<div class="f1-steps">
+				<div class="f1-progress">
+					<div class="f1-progress-line" style="width:{{progressBar}}%"></div>
+				</div>
+				<div class="f1-step" style="width:{{pageIconWidth}}%" id="page-{{$index}}" ng-class="getPosition(page.page_id)==getPosition(pageId) ? 'active' : (getPosition(page.page_id)<getPosition(pageId) ? 'activated' : '')" ng-repeat="page in pageDetails">
+					<a ng-href="{{getPosition(page.page_id)<getPosition(pageId)?'/digitalaudit/'+formId+'/'+page.page_id:''}}">
+						<div class="f1-step-icon"><i class="fa" id="pageicon-{{$index}}" ng-class="getPosition(page.page_id)==getPosition(pageId) ? 'fa-ellipsis-h' : (getPosition(page.page_id)<getPosition(pageId) ? 'fa-check' : 'fa-question')"></i></div>
+					</a>
+					<p>{{page.page_name}}</p>
+				</div>
+			</div>
+			<div class="height-20"></div>
+			<fieldset>
+				<div class="form-group" ng-class="errorClass('{{field.field_name}}','class')" ng-repeat="field in fieldDetails" ng-switch on="(field.field_type | lowercase)">
+					<label class="col-sm-3 control-label">{{field.field_label}}</label>
+					<div class="col-sm-8 text-left">
+						<input type="text" name="{{field.field_name}}" ng-model="formData[(field.field_name | lowercase)]" placeholder="Enter {{field.field_label}}" class="form-control" id="{{field.field_name}}" ng-switch-when="text" required>
+						<input type="number" name="{{field.field_name}}" string-to-number ng-model="formData[(field.field_name | lowercase)]" placeholder="Enter {{field.field_label}}" class="form-control" id="{{field.field_name}}" ng-switch-when="number" required>
+						<input type="date" name="{{field.field_name}}" ng-model="formData[(field.field_name | lowercase)]" placeholder="Enter {{field.field_label}}" class="form-control" id="{{field.field_name}}" ng-switch-when="date" required>
+						<input type="email" name="{{field.field_name}}" ng-model="formData[(field.field_name | lowercase)]" placeholder="Enter {{field.field_label}}" class="form-control" id="{{field.field_name}}" ng-switch-when="email" required>
+						<input type="url" name="{{field.field_name}}" ng-model="formData[(field.field_name | lowercase)]" placeholder="Enter {{field.field_label}}" class="form-control" id="{{field.field_name}}" ng-switch-when="url" required>
+						<input type="password" name="{{field.field_name}}" ng-model="formData[(field.field_name | lowercase)]" placeholder="Enter {{field.field_label}}" class="form-control" id="{{field.field_name}}" ng-switch-when="password" required>
+						<div class="checkbox" ng-switch-when="checkbox">
+							<input type="checkbox" name="{{field.field_name}}" ng-model="formData[(field.field_name | lowercase)]" placeholder="Enter {{field.field_label}}" id="{{field.field_name}}" ng-checked="formData[(field.field_name | lowercase)]">
+							<label for="{{field.field_name}}"></label>
+						</div>
+						<textarea name="{{field.field_name}}" ng-model="formData[(field.field_name | lowercase)]" placeholder="Enter {{field.field_label}}" class="form-control" id="{{field.field_name}}" ng-switch-when="textarea" required>{{formData[(field.field_name | lowercase)]}}</textarea>
+						<select name="{{field.field_name}}" ng-model="formData[(field.field_name | lowercase)]" class="form-control" id="{{field.field_name}}" ng-switch-when="select" required>
+							<option ng-repeat="selectOption in selectOptions[field.field_mapping_id]">{{selectOption}}</option>
+						</select>
+						<p ng-show="errorClass('{{field.field_name}}')" class="help-block">{{field.field_label}} is invalid</p>
+					</div>
+				</div>
+				<div class="f1-buttons">
+					<a ng-href="{{prevLink}}" class="btn btn-previous" ng-if="dispPrev">Previous</a>
+					<button ng-disabled="digitalauditForm.$invalid" class="btn btn-next" ng-if="dispNext">Save and Continue</button>
+					<button ng-disabled="digitalauditForm.$invalid" ng-click="submitAction()" class="btn btn-next" ng-if="dispSubmit">Submit</button>
+				</div>
+			</fieldset>
+		</form>
+	</div>
+</div>

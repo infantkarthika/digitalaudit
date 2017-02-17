@@ -1,0 +1,68 @@
+			
+
+<div class="register_form" ng-controller="SignUpController"> 
+	<alert type="danger" ng-show="error" class="text-center text-danger">
+		<span ng-bind="error">{{alert}}</span>
+	</alert> 
+	<md-content ng-app="signup" ng-controller="SignUpController" layout="row" layout-align="space-around" layout-padding="layout-padding" ng-cloak="ng-cloak" class="login-form">
+		<md-card flex="flex" flex-gt-sm="50" flex-gt-md="33"> 
+			<div class="alignCenter"><img src="../modules/core/client/img/logo/logo.png"/></div>
+
+			<md-card-content>
+				<form name="registerForm" ng-submit="signup()">
+					
+						<md-input-container class="md-block">
+							<label>Username</label>
+							<input required type="email" name="email" ng-model="user.email"
+							minlength="10" maxlength="100" ng-pattern="/^.+@.+\..+$/" />
+							<div ng-messages="registerForm.email.$error" role="alert">
+								<div ng-message-exp="['required', 'minlength', 'maxlength', 'pattern']">
+									Username not look like an e-mail address.
+								</div>
+							</div>
+						</md-input-container>
+
+						<md-input-container class="md-block">
+							<label>Password</label>
+							<input required type="password" name="password" ng-model="user.password"
+							minlength="8" maxlength="20" ng-pattern="/(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z])/" />
+
+							<div ng-messages="registerForm.password.$error" role="alert">
+								<div ng-message-exp="['required', 'minlength', 'maxlength', 'pattern']">
+									Enter the password minimum 8 alpha-numeric characters; Max 20 characters.
+								</div>
+							</div>
+						</md-input-container>
+
+						<md-input-container class="md-block">
+							<label>Confirm password</label>
+							<input required type="password" name="confirmPassword" ng-model="user.confirmPassword"
+							minlength="8" maxlength="20" ng-pattern="/(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z])/" valid-password-c />
+							<div ng-messages="registerForm.confirmPassword.$error && registerForm.confirmPassword.$error.passwordVerify" role="alert">
+								<div ng-message-exp="['required', 'minlength', 'maxlength', 'pattern']">
+									Passwords do not match.
+								</div>
+							</div>
+						</md-input-container>
+
+						<md-progress-circular md-mode="indeterminate" ng-show="isLoading"></md-progress-circular>
+						<div layout="row" layout-align="center center" style="padding-top:20px;">						
+							<md-button class="md-raised md-primary btn btn-raised btn-block ripple-effect" type="submit" style="padding-left: 10px;padding-right: 10px;">Register</md-button>
+						</div>
+						<div layout="row" layout-align="center center" style="padding-top:20px;">
+							<md-button href="signin" class="md-primary" md-no-ink="md-no-ink">Already a User?</md-button>
+						</div>
+						<div ng-if="alert">
+							<br/>
+							<b layout="row" layout-align="center center" class="md-padding">
+								{{alert}}
+							</b>
+						</div>
+										
+
+				</form>
+			</md-card-content>			
+		</md-card>
+	</md-content>
+</div> 
+</div> 

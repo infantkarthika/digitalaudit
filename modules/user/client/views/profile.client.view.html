@@ -1,0 +1,55 @@
+<div class="profile_form" ng-controller="ProfileController"> 
+		<alert type="danger" ng-show="error" class="text-center text-danger">
+			<span ng-bind="error"></span>
+	    </alert>  
+	<div class="loginWrapper">
+		<section class="login_content">
+			<md-toolbar>
+	          <div class="md-toolbar-tools">
+	            <h2><span>Account Information</span></h2>
+	          </div>
+	        </md-toolbar>
+			<md-content layout-padding>
+			<form name="profileForm" ng-submit="changepwd()">
+			  <md-input-container class="md-block">
+			    <label>Username/Email Address</label>
+			    <input type="text" name="Username" ng-model="loggedInUser.username" readonly />			    
+			  </md-input-container>
+
+			  <br/>
+			  <br/>
+
+			   <md-input-container class="md-block">
+			    <label>New Password</label>
+			    <input required type="password" name="newpassword" ng-model="user.newpassword"
+			           minlength="8" maxlength="20" ng-pattern="/^(?=.*\d)(?=.*[a-zA-Z]).{6,20}$/" />
+
+			    <div ng-messages="profileForm.password.$error" role="alert">
+			      <div ng-message-exp="['required', 'minlength', 'maxlength', 'pattern']">
+			       Enter the password minimum 8 alpha-numeric characters; Max 20 characters.
+			      </div>
+			    </div>
+			  </md-input-container>
+
+			   <md-input-container class="md-block">
+			    <label>Confirm password</label>
+			    <input required type="password" name="confirmPassword" ng-model="user.confirmPassword"
+			           minlength="8" maxlength="20" ng-pattern="/^(?=.*\d)(?=.*[a-zA-Z]).{6,20}$/" />
+
+			    <div ng-messages="profileForm.confirmPassword.$error" role="alert">
+			      <div ng-message-exp="['required', 'minlength', 'maxlength', 'pattern','passwordVerify']">
+			       Passwords do not match.
+			      </div>
+			    </div>
+			  </md-input-container>
+			 
+			  <div layout="row" layout-align="center center" style="padding-top:20px;">
+			    <md-button type="submit">Change Password</md-button>
+			  </div>
+
+			</form>
+			</md-content>
+			</section>
+	</div>
+
+</div> 
